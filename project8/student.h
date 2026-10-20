@@ -15,6 +15,7 @@ class Student {
     int creditHours;
   public:
     Student();
+    Student(studentString)
     ~Student();
     void init(studentString);
     void printStudent();
