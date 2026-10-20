@@ -87,5 +87,43 @@ print the rest in the format of "June 6, 2006"
 # Student
 ### Student::Student
 ```
+set lastName
+set firstName
+set age
+set address
+set dob // date of birth
+set expectGrad
+set creditHours
+```
+### Student::~Student
+```
+delete all of the above from the heap to avoid memory leaks
+```
+### Student::init(studentString)
+```
+read studentString until "," and place each part into respective variables
+//IN ORDER! USING ("Danielle,Johnson,32181 Johnson Course Apt. 389,New Jamesside,IN,59379,02/17/2004,05/15/2027,65") AS A REFERENCE
+set lastName //Danielle
+set firstName //Johnson
+set address // Johnson Course Apt. 389 // city = New Jamesside // state = IN // zipCode = 59379
+set dob // 02/17/2004
+set expectGrad //05/15/2027
+set creditHours //65
+
+```
+### Student::printStudent()
+```
+
+```
+### Student::getLastName()
+```
+
+```
+### Student::getFirstName()
+```
+
+```
+### Student::getCreditHours()
+```
 
 ```
