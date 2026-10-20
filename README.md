@@ -101,6 +101,7 @@ delete all of the above from the heap to avoid memory leaks
 ```
 ### Student::init(studentString)
 ```
+import stringstream as ss
 read studentString until "," and place each part into respective variables
 //IN ORDER! USING ("Danielle,Johnson,32181 Johnson Course Apt. 389,New Jamesside,IN,59379,02/17/2004,05/15/2027,65") AS A REFERENCE
 set lastName //Danielle
@@ -113,17 +114,17 @@ set creditHours //65
 ```
 ### Student::printStudent()
 ```
-
+print all of the information in the format requested by the assignment
 ```
 ### Student::getLastName()
 ```
-
+return last name
 ```
 ### Student::getFirstName()
 ```
-
+return first name
 ```
 ### Student::getCreditHours()
 ```
-
+return credit hours
 ```
