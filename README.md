@@ -43,6 +43,30 @@ class Date{
 
 }
 ```
+# Main
+### loadStudents
+```
+void loadStudents(reference to the vector of student pointers)
+  create file input stream inFile
+  create string currentLine
+open inFile with students.csv
+read each line using currentLine
+  create an instance of Student on the heap
+  push that student to the back of the vector
+close input file
+```
+### showStudentNames
+```
+void showStudentNames()
+  given a reference to a vector of student pointers
+  go through one student at a time
+  for each student
+    print the student's last name, first name, and credit hours on a single line
+```
+### printStudents
+```
+
+```
 # Address
 ### Address:Address()
 ```
