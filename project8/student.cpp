@@ -14,11 +14,11 @@ Student::Student(){
   expectGrad = "";
   creditHours = 0;
 } // end of constructor
-/*
+
 Student::Student(studentString){
-  std::string studentString(studentString);
+  std::string studentString;
 }
-*/
+
 Student::~Student(){
   delete address;
   delete dob;
@@ -27,35 +27,37 @@ Student::~Student(){
 
 Student::init(studentString){
   std::stringstream ss(studentString);
-  Address a;
-  Date d;
 
   std::string lastName;
   std::string firstName;
-  std::string age;
+  std::string tAge;
   std::string tAddress;
   std::string tDob;
   std::string tExpectGrad;
-  std::string creditHours;
+  std::string tCreditHours;
 
   getline(ss, lastName, ',');
   getline(ss, firstName, ',');
-  getline(ss, age, ',');
+  getline(ss, tAge, ',');
   getline(ss, tAddress, ',');
   getline(ss, tDob, ',');
   getline(ss, tExpectGrad, ',');
-  getline(ss, creditHours, ',');
+  getline(ss, tCreditHours, ',');
 
   ss.clear();
   ss.str("");
 
-  ss << age << " " << creditHours;
+  ss << tAge << " " << tCreditHours;
   ss >> age >> creditHours;
 
+  
 } // end of init
 
 Student::printStudent(){
-    
+  Address a;
+  Date d;
+  
+  
 } // end of printStudent
 
 Student::getLastName(){
