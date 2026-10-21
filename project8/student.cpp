@@ -27,13 +27,15 @@ Student::~Student(){
 
 Student::init(studentString){
   std::stringstream ss(studentString);
+  Address a;
+  Date d;
 
   std::string lastName;
   std::string firstName;
   std::string age;
-  std::string new tAddress;
-  std::string new tDob;
-  std::string new tExpectGrad;
+  std::string tAddress;
+  std::string tDob;
+  std::string tExpectGrad;
   std::string creditHours;
 
   getline(ss, lastName, ',');
@@ -47,12 +49,13 @@ Student::init(studentString){
   ss.clear();
   ss.str("");
 
-
+  ss << age << " " << creditHours;
+  ss >> age >> creditHours;
 
 } // end of init
 
 Student::printStudent(){
-
+    
 } // end of printStudent
 
 Student::getLastName(){

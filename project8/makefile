@@ -1,7 +1,7 @@
-studentData: main.o address.o date.o
-	g++ -g main.o address.o date.o -o studentData
+studentData: main.o address.o date.o student.o
+	g++ -g main.o address.o date.o student.o -o studentData
 
-main.o: main.cpp address.h date.h
+main.o: main.cpp address.h date.h student.h
 	g++ -g -c main.cpp
 
 address.o: address.cpp address.h
@@ -9,6 +9,9 @@ address.o: address.cpp address.h
 
 date.o: date.cpp date.h
 	g++ -g -c date.cpp
+
+student.o: student.cpp student.h
+	g++ -g -c student.cpp
 
 run: studentData
 	./studentData
