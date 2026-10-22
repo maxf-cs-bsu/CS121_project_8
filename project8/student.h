@@ -6,8 +6,8 @@
 
 class Student {
   protected:
-    std::string name;
     std::string lastName;
+    std::string firstName;
     int age;
     Address address; 
     Date dob;
@@ -15,13 +15,13 @@ class Student {
     int creditHours;
   public:
     Student();
-    Student(studentString)
     ~Student();
-    void init(studentString);
+    void init(std::string studentString);
     void printStudent();
     void getFirstName();
     void getLastName();
     void getCreditHours();
+    void getLastFirst();
 
 };
 

@@ -6,68 +6,80 @@
 #include "student.h"
 
 Student::Student(){
-  lastName = "";
-  firstName = "";
+  lastName = "null";
+  firstName = "null";
   age = 0;
-  address = "";
-  dob = "";
-  expectGrad = "";
   creditHours = 0;
 } // end of constructor
 
-Student::Student(studentString){
-  std::string studentString;
-}
-
 Student::~Student(){
-  delete address;
-  delete dob;
-  delete expectGrad;
 } // end of destructor
 
-Student::init(studentString){
+void Student::init(std::string studentString){
   std::stringstream ss(studentString);
+  Address a;
+  Date d;
 
-  std::string lastName;
-  std::string firstName;
-  std::string tAge;
-  std::string tAddress;
+  std::string tLastName;
+  std::string tFirstName;
+  std::string tStreet;
+  std::string tCity;
+  std::string tState;
+  std::string tZipcode;
   std::string tDob;
   std::string tExpectGrad;
   std::string tCreditHours;
 
-  getline(ss, lastName, ',');
-  getline(ss, firstName, ',');
-  getline(ss, tAge, ',');
-  getline(ss, tAddress, ',');
+  getline(ss, tLastName, ',');
+  getline(ss, tFirstName, ',');
+  getline(ss, tStreet, ',');
+  getline(ss, tCity, ',');
+  getline(ss, tState, ',');
+  getline(ss, tZipcode, ',');
   getline(ss, tDob, ',');
   getline(ss, tExpectGrad, ',');
   getline(ss, tCreditHours, ',');
 
-  ss.clear();
-  ss.str("");
+  firstName = tFirstName;
+  lastName = tLastName;
+  expectGrad = tExpectGrad;
+  creditHours = std::stoi(tCreditHours);
 
-  ss << tAge << " " << tCreditHours;
-  ss >> age >> creditHours;
+//  ss.clear();
+//  ss.str("");
 
-  
+  a.init(tStreet, tCity, tState, tZipcode);
+  d.init(tDob);
+
 } // end of init
 
-Student::printStudent(){
+void Student::printStudent(){
   Address a;
   Date d;
-  
+  	
+  std::cout << firstName << " " << lastName << std::endl;
+  a.printAddress();
+  std::cout << "DOB: ";
+  d.printDate();
+  std::cout << "Grad: ";
+  d.printDate(expectGrad);
+  std::cout << "Credits: " << creditHours << std::endl;
+  std::cout << "______________________________________" << std::endl;
   
 } // end of printStudent
 
-Student::getLastName(){
+void Student::getLastName(){
   return lastName;
 } // end of getLastName
 
-Student::getFirstName(){
+void Student::getFirstName(){
   return firstName;
 } // end of getFirstName
 
-Student::getCreditHours(){
+void Student::getCreditHours(){
   return creditHours;
 } // end of getCreditHours
+
+void Student::getLastName(){
+  return lastname + ", " firstName;
+}
