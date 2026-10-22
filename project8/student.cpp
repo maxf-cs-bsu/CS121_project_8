@@ -6,8 +6,8 @@
 #include "student.h"
 
 Student::Student(){
-  lastName = "null";
   firstName = "null";
+  lastName = "null";
   age = 0;
   creditHours = 0;
 } // end of constructor
@@ -17,11 +17,9 @@ Student::~Student(){
 
 void Student::init(std::string studentString){
   std::stringstream ss(studentString);
-  Address a;
-  Date d;
 
-  std::string tLastName;
   std::string tFirstName;
+  std::string tLastName;
   std::string tStreet;
   std::string tCity;
   std::string tState;
@@ -30,8 +28,8 @@ void Student::init(std::string studentString){
   std::string tExpectGrad;
   std::string tCreditHours;
 
-  getline(ss, tLastName, ',');
   getline(ss, tFirstName, ',');
+  getline(ss, tLastName, ',');
   getline(ss, tStreet, ',');
   getline(ss, tCity, ',');
   getline(ss, tState, ',');
@@ -42,44 +40,42 @@ void Student::init(std::string studentString){
 
   firstName = tFirstName;
   lastName = tLastName;
-  expectGrad = tExpectGrad;
   creditHours = std::stoi(tCreditHours);
 
 //  ss.clear();
 //  ss.str("");
 
-  a.init(tStreet, tCity, tState, tZipcode);
-  d.init(tDob);
+  address.init(tStreet, tCity, tState, tZipcode);
+  dob.init(tDob);
+  expectGrad.init(tExpectGrad);
+
 
 } // end of init
 
 void Student::printStudent(){
-  Address a;
-  Date d;
-  	
   std::cout << firstName << " " << lastName << std::endl;
-  a.printAddress();
+  address.printAddress();
   std::cout << "DOB: ";
-  d.printDate();
+  dob.printDate();
   std::cout << "Grad: ";
-  d.printDate(expectGrad);
+  expectGrad.printDate();
   std::cout << "Credits: " << creditHours << std::endl;
   std::cout << "______________________________________" << std::endl;
   
 } // end of printStudent
 
-void Student::getLastName(){
+std::string Student::getLastName(){
   return lastName;
 } // end of getLastName
 
-void Student::getFirstName(){
+std::string Student::getFirstName(){
   return firstName;
 } // end of getFirstName
 
-void Student::getCreditHours(){
+int Student::getCreditHours(){
   return creditHours;
 } // end of getCreditHours
 
-void Student::getLastName(){
-  return lastname + ", " firstName;
-}
+std::string Student::getLastFirst(){
+  return lastName + ", " + firstName;
+} // end of getLastFirst

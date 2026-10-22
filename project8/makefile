@@ -22,3 +22,6 @@ clean:
 
 debug: studentData
 	gdb studentData
+
+valgrind: studentData
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./studentData
