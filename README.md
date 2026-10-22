@@ -155,3 +155,7 @@ return first name
 ```
 return credit hours
 ```
+### Student::getLastFirst()
+```
+return last name + comma + first name
+```
