@@ -66,6 +66,8 @@ void showStudentNames()
 ### printStudents
 ```
 void printStudents()
+  use printStudents method from student.cpp
+  print each student line by line
   
 ```
 # Address
