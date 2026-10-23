@@ -1,8 +1,60 @@
 #include <iostream>
+#include <sstream>
+#include <fstream>
+#include <string>
+#include <vector>
+
 #include "date.h"
 #include "address.h"
 #include "student.h"
 
+
+void loadStudents(std::vector<Student*>& students);
+void showStudentNames(std::vector<Student*>& students);
+void printStudents(std::vector<Student*>& students);
+//void findStudents(std::vector<Student*>& students);
+//void delStudents(std::vector<Student*>& students);
+std::string menu();
+
+
+
+int main(){
+  std::vector<Student*> students;
+
+  return 0;
+} // end of main
+
+
+void loadStudents(std::vector<Student*>& students){
+  std::ifstream inFile;
+  std::string currentLine;
+
+  inFile.open("students.csv");
+  while(getline(inFile, currentLine)){
+    Student* s = new Student;
+    s->init(currentLine);
+    studetns.push_back(s);
+  } // end of whileloop
+
+  inFile.close();
+} // end of loadstudents
+
+
+void showStudentNames(std::vector<Student*>& students){
+    
+} // end of showstudentnames
+
+
+void printStudents(std::vector<Student*>& students){
+  
+} // end of printstudents
+
+std::string menu(){
+  std::
+}
+
+// OLD TEST CODE IN CASE SOMETHING BREAKS!!!
+/*
 void testAddress();
 void testDate();
 void testStudent();
@@ -36,4 +88,4 @@ void testStudent(){
   std::cout << student->getLastFirst();
   delete student;
 } // end testStudent
-
+*/

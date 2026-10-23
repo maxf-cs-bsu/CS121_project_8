@@ -44,6 +44,14 @@ class Date{
 }
 ```
 # Main
+### main()
+```
+call menu function to display options to the user
+  0 should end of the program // this shoudl always be zero
+  1 should should print all of the student's names using printLastFirst() for formating
+  2 should should use the printStudent function found inside of student.cpp for every line in the .csv file
+  3 should prompt the user to search by LAST name for a student, and then the printStudent function should be used on only that student
+```
 ### loadStudents
 ```
 void loadStudents(reference to the vector of student pointers)
