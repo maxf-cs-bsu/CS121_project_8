@@ -42,14 +42,12 @@ void Student::init(std::string studentString){
   lastName = tLastName;
   creditHours = std::stoi(tCreditHours);
 
-//  ss.clear();
-//  ss.str("");
+  ss.clear();
+  ss.str("");
 
   address.init(tStreet, tCity, tState, tZipcode);
   dob.init(tDob);
   expectGrad.init(tExpectGrad);
-
-
 } // end of init
 
 void Student::printStudent(){
