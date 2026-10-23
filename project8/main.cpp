@@ -50,8 +50,15 @@ void printStudents(std::vector<Student*>& students){
 } // end of printstudents
 
 std::string menu(){
-  std::
-}
+  int userSelect
+  std::cout << "0) Quit " << std::endl;
+  std::cout << "1) Print all student names " << std::endl;
+  std::cout << "2) Print all student data " << std::endl;
+  std::cout << "3) Find a student " << std::endl;
+  std::cout << std::endl;
+  std::cout << "Type 0-3 for selection: ";
+  std::cin >> userSelect;
+} // end of menu
 
 // OLD TEST CODE IN CASE SOMETHING BREAKS!!!
 /*
