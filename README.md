@@ -98,6 +98,13 @@ void printStudents()
   print each student line by line
   
 ```
+### findStudent()
+```
+get user input for a last name to search for
+go through student last names checking if they match the input
+  if they do, print student
+  else, do nothing
+```
 # Address
 ### Address:Address()
 ```

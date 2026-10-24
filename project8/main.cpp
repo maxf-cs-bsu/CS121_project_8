@@ -12,8 +12,9 @@
 void loadStudents(std::vector<Student*>& students);
 void showStudentNames(std::vector<Student*>& students);
 void printStudents(std::vector<Student*>& students);
+void findStudent(std::vector<Student*>& students);
 void delStudents(std::vector<Student*>& students);
-std::string menu();
+void menu();
 
 
 int main(){
@@ -26,13 +27,14 @@ int main(){
     menu();
     std::cin >> userInput;
     if (userInput == 0){
+      std::cout << "Closing..." << std::endl;
       keepGoing = false;
     } else if (userInput == 1){
       showStudentNames(students);
     } else if (userInput == 2){
       printStudents(students);
     } else if (userInput == 3){
-      std::cout << "temp" << std::endl; // temp
+      findStudent(students);
     } else {
       std::cout << "Error: invald input. Ensure you type the correct inputs." << std::endl;
     } // end of if check
@@ -76,13 +78,26 @@ void printStudents(std::vector<Student*>& students){
   } // end of for 
 } // end of printstudents
 
+void findStudent(std::vector<Student*>& students){
+  bool noMatch = false;
+  std::string searchName;
+  std::cout << "Enter last name: ";
+  std::cin >> searchName;
+  for (Student* student: students){
+    if (student->getLastName() == searchName){
+      student->printStudent();
+      std::cout << std::endl;
+    } // end of if
+  } // end of for
+} // end of findstudents
+
 void delStudents(std::vector<Student*>& students){
   for (Student* student: students){
     delete student;
   } // end of if
 } // end of deletion
 
-std::string menu(){
+void menu(){
   std::cout << "0) Quit " << std::endl;
   std::cout << "1) Print all student names " << std::endl;
   std::cout << "2) Print all student data " << std::endl;
@@ -91,40 +106,3 @@ std::string menu(){
   std::cout << "Type 0-3 for selection: ";
 } // end of menu
 
-
-// OLD TEST CODE IN CASE SOMETHING BREAKS!!!
-/*
-void testAddress();
-void testDate();
-void testStudent();
-
-int main(){
-  std::cout << "Hello!" << std::endl;
-  testAddress();
-  testDate();
-  testStudent();
-  return 0;
-} // end main
-
-void testAddress(){
-  Address a;
-  a.init("123 W Main St", "Muncie", "IN", "47303");
-  a.printAddress();
-} // end testAddress
-
-void testDate(){
- Date d;
- d.init("01/27/1997");
- d.printDate();
-} // end testDate
-
-void testStudent(){
-  std::string studentString = "Danielle,Johnson,32181 Johnson Course Apt. 389,New Jamesside,IN,59379,02/17/2004,05/15/2027,65";
-  Student* student = new Student();
-  student->init(studentString);
-  student->printStudent();
-  std::cout << std::endl;
-  std::cout << student->getLastFirst();
-  delete student;
-} // end testStudent
-*/
