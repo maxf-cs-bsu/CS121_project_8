@@ -46,6 +46,26 @@ class Date{
 # Main
 ### main()
 ```
+using vectors, call loadStudents with the name students
+
+while keepGoing
+  call menu() to load information to use which numbers for which function
+  if input "0"
+    keepGoing = false
+  if input "1"
+    pass reference to showStudentNames function
+  if input "2"
+    pass reference to printStudents
+  if input "3"
+    pass reference to findStudent
+  if input is higher then listed
+    "I SAID 0 THROUGH 3 >:(" // maybe a little nicer when actually coding.
+
+when main loop is done
+delete all students from the heap to avoid memory leaks
+```
+### menu()
+```
 call menu function to display options to the user
   0 should end of the program // this shoudl always be zero
   1 should should print all of the student's names using printLastFirst() for formating

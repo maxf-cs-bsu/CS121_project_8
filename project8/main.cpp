@@ -12,15 +12,21 @@
 void loadStudents(std::vector<Student*>& students);
 void showStudentNames(std::vector<Student*>& students);
 void printStudents(std::vector<Student*>& students);
-//void findStudents(std::vector<Student*>& students);
-//void delStudents(std::vector<Student*>& students);
+void delStudents(std::vector<Student*>& students);
 std::string menu();
-
 
 
 int main(){
   std::vector<Student*> students;
+  loadStudents(students);
+  showStudentNames(students);
+  printStudents(students);
 
+  std::ifstream inFile;
+  std::string currentLine;
+  
+  delStudents(students);
+    
   return 0;
 } // end of main
 
@@ -33,32 +39,45 @@ void loadStudents(std::vector<Student*>& students){
   while(getline(inFile, currentLine)){
     Student* s = new Student;
     s->init(currentLine);
-    studetns.push_back(s);
+    students.push_back(s);
   } // end of whileloop
-
   inFile.close();
 } // end of loadstudents
 
 
 void showStudentNames(std::vector<Student*>& students){
-    
+   for (Student* student: students){
+     std::cout << student->getLastFirst();
+     std::cout << ", " << student->getCreditHours() << std::endl;
+   } // end of for
 } // end of showstudentnames
 
 
 void printStudents(std::vector<Student*>& students){
-  
+  std::string studentString;
+  for (Student* student: students){
+    student->init(studentString);
+    student->printStudent();
+    std::cout << std::endl;
+  } // end of for 
 } // end of printstudents
 
+void delStudents(std::vector<Student*>& students){
+  for (Student* student: students){
+    delete student;
+  } // end of if
+} // end of deletion
+
 std::string menu(){
-  int userSelect
   std::cout << "0) Quit " << std::endl;
   std::cout << "1) Print all student names " << std::endl;
   std::cout << "2) Print all student data " << std::endl;
   std::cout << "3) Find a student " << std::endl;
   std::cout << std::endl;
   std::cout << "Type 0-3 for selection: ";
-  std::cin >> userSelect;
+  return 0;
 } // end of menu
+
 
 // OLD TEST CODE IN CASE SOMETHING BREAKS!!!
 /*
