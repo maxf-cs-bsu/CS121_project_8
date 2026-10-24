@@ -19,8 +19,24 @@ std::string menu();
 int main(){
   std::vector<Student*> students;
   loadStudents(students);
-  showStudentNames(students);
-  printStudents(students);
+
+  bool keepGoing = true;
+  while(keepGoing){
+    int userInput;
+    menu();
+    std::cin >> userInput;
+    if (userInput == 0){
+      keepGoing = false;
+    } else if (userInput == 1){
+      showStudentNames(students);
+    } else if (userInput == 2){
+      printStudents(students);
+    } else if (userInput == 3){
+      std::cout << "temp" << std::endl; // temp
+    } else {
+      std::cout << "Error: invald input. Ensure you type the correct inputs." << std::endl;
+    } // end of if check
+  } // end of keepGoing
 
   std::ifstream inFile;
   std::string currentLine;
@@ -54,9 +70,7 @@ void showStudentNames(std::vector<Student*>& students){
 
 
 void printStudents(std::vector<Student*>& students){
-  std::string studentString;
   for (Student* student: students){
-    student->init(studentString);
     student->printStudent();
     std::cout << std::endl;
   } // end of for 
@@ -75,7 +89,6 @@ std::string menu(){
   std::cout << "3) Find a student " << std::endl;
   std::cout << std::endl;
   std::cout << "Type 0-3 for selection: ";
-  return 0;
 } // end of menu
 
 
